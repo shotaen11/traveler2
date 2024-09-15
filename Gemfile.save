@@ -68,5 +68,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile", require: "refire/rails", github: 'manfe/refire'
 gem "refile-mini_magick"
+
+
