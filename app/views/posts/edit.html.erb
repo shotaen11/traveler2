@@ -1,0 +1,8 @@
+<h1>編集する</h1>
+<%= form_with model:@post, local:true do |f| %>
+    <h4>旅行先</h4>
+    <%= f.text_field :location %>
+    <h4>感想</h4>
+    <%= f.text_area :text %><br>
+    <%= f.submit '保存' %>
+<% end %>
