@@ -63,3 +63,46 @@ h1 {
     background-blend-mode: lighten;
     background-size: 100% 100%;
 }
+
+.page a,
+.next a,
+.last a,
+.first a,
+.prev a {
+ color: black;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
+.page a:hover,
+.next a:hover,
+.last a:hover,
+.first a:hover,
+.prev a:hover {
+    color: black;
+}
+
+.current {
+    font-weight: bold;
+}
+
+.comments-index {
+    background-color: #fff;
+    border: 1px #000 solid;
+}
+
+.comment-delete {
+    margin-left: auto;
+}
+
+.comments {
+    margin-left: 50px;
+}
+
+.caption {
+    margin-bottom: 0;
+}
+
+.favorite_btn {
+    color: #000;
+}
