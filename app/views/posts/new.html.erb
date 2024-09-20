@@ -3,6 +3,15 @@
    <div class="row mt-5">
     <h1 class="font-weight-normal">旅行新規投稿</h1>
    </div>
+   <% if @post.errors.any? %>
+   <div class="card text-center card text-white bg-danger mt-3">
+     <%= @post.errors.count %>件のエラーが発生しました
+     <% @post.errors.full_messages.each do |message| %>
+      <%= message %>
+     <% end %>
+     </div>
+    <% end %>
+
    <div class="row mt-5">
      <%= form_with model: @post, local:true do |f| %>
      <div class="form-group mb-3">
@@ -16,6 +25,9 @@
      <div class="form-group mb-3">
       <label class="form-label">【画像】</label><br>
       <%= f.file_field :image %>
+     </div>
+     <div class="form-group">
+       <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]},{},{class: "custom-select w-25 mb-3"} %>
      </div>
      <%= f.submit '投稿する', class: "btn btn-success" %>
      <% end %>
