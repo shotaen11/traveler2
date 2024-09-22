@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.increment!(:view_count) #閲覧数をインクリメント
     @comment = Comment.new
     @comments = @post.comments.page(params[:page]).per(7).reverse_order
   end

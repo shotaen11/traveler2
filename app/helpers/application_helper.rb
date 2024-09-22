@@ -1,2 +1,4 @@
 module ApplicationHelper
-end
+    # ヘルパーメソッドをここに定義
+  end
+  
