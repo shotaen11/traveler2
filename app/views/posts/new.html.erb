@@ -26,6 +26,34 @@
       <label class="form-label">【画像】</label><br>
       <%= f.file_field :image %>
      </div>
+  <% if @post.id.nil? %>
+     <div class="form-group" id="star">
+     <label class="form-label">【評価】</label><br>
+      <%= f.label :star %>
+      <%= f.hidden_field :star, id: :review_star, class: 'form-control' %>
+      <div id="post_raty"></div>
+     </div>
+     <script>
+      $(document).on('turbolinks:load', function() {
+        let elem = document.querySelector('#post_raty');
+        if (elem == null) return;
+  
+        elem.innerHTML = ""
+        let opt = {  
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          scoreName: 'book[star]',
+        };
+        raty(elem, opt);
+      });
+    </script>
+  <% else %>
+    < class="form-group">
+      <%= render "static.rate", post: @post %>
+    </div>
+<% end %>
+      
      <div class="form-group">
        <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]},{},{class: "custom-select w-25 mb-3"} %>
      </div>
