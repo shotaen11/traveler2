@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-
+# データベースに対応したRubyのクラスを作成
     attachment :image
     belongs_to :user
     has_many :comments, dependent: :destroy

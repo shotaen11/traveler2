@@ -3,7 +3,8 @@ h1 {
 }
 
 .cover-new {
-    height: 100%;
+    // 高さ最大にする
+    height: 100%; 
     width: 100%;
     background-image: url(/assets/new-scaled.jpeg);
     background-color: rgba(255, 255, 255, 0.4);
@@ -11,7 +12,7 @@ h1 {
     background-size: 100% 100%;
 }
 
-.form-lebel {
+.form-label {
     font-size: 20px;
 }
 
