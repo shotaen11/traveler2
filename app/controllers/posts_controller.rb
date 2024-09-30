@@ -16,35 +16,35 @@ class PostsController < ApplicationController
     end
   end
 
-  def index
-    @posts = Post.published.page(params[:page]).reverse_order
+  def index #ルーティングのresoucesにおけるindexを定義（閲覧ページ）
+    @posts = Post.published.page(params[:page]).reverse_order #変数は複数形とする
     @posts = @posts.where('location LIKE ?', "%#{params[:search]}%") if params[:search].present?
   end
 
-  def show
-    @post = Post.find(params[:id])
+  def show #ルーティングのresoucesにおけるshowを定義（投稿詳細ページ）
+    @post = Post.find(params[:id]) #１つだけ取得するので、変数は単数　findメソッドで、postから１つのidを取得
     @post.increment!(:view_count) #閲覧数をインクリメント
     @comment = Comment.new
     @comments = @post.comments.page(params[:page]).per(7).reverse_order
   end
 
-  def edit
-    @post = Post.find(params[:id])
+  def edit #ルーティングのresoucesにおけるeditを定義（編集ページ）
+    @post = Post.find(params[:id]) #１つだけ取得するので、変数は単数　findメソッドで、postから１つのidを取得
   end
 
-  def update
-    @post = Post.find(params[:id])
-    if @post.update(post_params)
-     redirect_to post_path(@post.id)
+  def update #編集後の保存（更新）
+    @post = Post.find(params[:id]) #編集するpostを1つ取得
+    if @post.update(post_params) #更新
+     redirect_to post_path(@post.id) #更新後のページ行き先
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
-  def destroy
-    post = Post.find(params[:id])
+  def destroy #ルーティングのresoucesにおけるdestroyを定義（削除ページ）
+    post = Post.find(params[:id]) #viewに渡す必要がないため、ローカル変数
     post.destroy
-    redirect_to posts_path
+    redirect_to posts_path #削除後、一覧ページへリダイレクト
   end
 
   def confirm

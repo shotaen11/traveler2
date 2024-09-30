@@ -33,8 +33,13 @@
     <% if @post.user == current_user %>
       <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
       <%= link_to '削除する', post_path(@post.id),  data: { turbo_method: :delete, turbo_confirm:  "本当に消しますか？"}, class: "btn btn-danger" %><br>
-    <% end %> 
-      <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark mt-3" %>
+    #data: { turbo_method: :deleteにより、HTMLメソッド Verbで指定　::を2つ付けること
+    #destroyはアクション、deleteはHTMLメソッド
+    #turbo_confirm: "本当に消しますか？" } メッセージ通知
+    #class: "btn btn-danger" CSSへ
+      <% end %> 
+      <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark mt-3" %> #URL Patternにidなし
+    # link_to 表示させるテキスト,リンク先URL//rails routesでURLを確認　Prefixの末尾に_pathを追記
     </div>
     <div class="comments ml-5 mt-5">
       <%= form_with(model:[@post, @comment], local: true) do |f| %>
