@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 # データベースに対応したRubyのクラスを作成
-    attachment :image
+    attachment :image #Refileを使用する際には、attachmentメソッドが必要
     belongs_to :user
     has_many :comments, dependent: :destroy
     has_many :favorites, dependent: :destroy

@@ -10,6 +10,7 @@
    <%= link_to post_path(post) do %>
    <p class="caption"><%= post.user.name %></p>
    <%= attachment_image_tag post, :image, format: 'jpeg', size: '300x200' %>
+   # attachment_image_tagは、Active Storageによって添付された画像ファイルを表示するためのヘルパーメソッド
    <p class="caption"><%= post.location %></p> #1つずつのpostからlocationを取得して表示
    <p class="caption"><%= "#{post.comments.count} コメント" %></p>
    <% end %>

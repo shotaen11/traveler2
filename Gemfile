@@ -68,7 +68,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "refile", require: "refile/rails", github: 'manfe/refile'
+#gemを追加したら、「bundle install」を実行
+gem "refile", require: "refile/rails", github: 'manfe/refile' #画像投稿
 gem "refile-mini_magick"
 
 gem 'bootstrap', '~> 5.3.0'

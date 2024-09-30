@@ -9,7 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
+# テーブルの中身を確認↓ 書き換え禁止
 ActiveRecord::Schema[7.1].define(version: 2024_09_23_012233) do
   create_table "comments", force: :cascade do |t|
     t.text "comment"
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_23_012233) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t| #テーブル名：posts
     t.string "location"
     t.string "text"
     t.datetime "created_at", null: false
