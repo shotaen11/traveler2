@@ -1,22 +1,23 @@
-.title {
-    font-family: cursive;
+.title { #class="title"が指定されたHTML要素に対して、フォントを「cursive」（筆記体のようなフォント）に設定
+    font-family: cursive; #familyは「種類」
 }
 
-sub-title {
+.sub-title {
     font-family: serif;
 }
 
-.cover {
+.cover { #class="cover"が指定された要素に対してスタイルを適用
     height: 100%;
     width: 100%;
-    display: table;
-    background-image: url(/assets/top-scaled.jpg);
-    background-color:rgba(255,255,255,0.4);
-    background-blend-mode: lighten;
+    display: table; #要素をテーブルのように扱い、内部のレイアウトする。中央揃えや均等な配置のために
+    background-image: url(/assets/top-scaled.jpg); #背景画像の指定
+    background-color:rgba(255,255,255,0.4); #半透明の白色背景を指定。0.4=40%
+    background-blend-mode: lighten; #background-color と background-image をブレンド
+    #lightenは、背景画像と背景色を比較し、より明るい色の方を表示するブレンドモード
     background-size: 100% 100%;
 }
 
 .text-center {
-    display: table-cell;
-    vertical-align: middle;
+    display: table-cell; #要素をテーブルのセルのように扱い、その中身を水平・垂直方向で制御しやすくする
+    vertical-align: middle; #垂直方向での配置を指定するプロパティ。セル内のコンテンツが上下の中央に配置
 }

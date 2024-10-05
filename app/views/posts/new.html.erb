@@ -13,8 +13,8 @@
      </div>
     <% end %>
 
-   <div class="row mt-5">
-     <%= form_with model: @post, local:true do |f| %> 
+   <div class="row mt-5"> #margin-topを追加。サイズ５
+     <%= form_with model: @post, local:true do |f| %> #フォームを生成 do |f|: ブロックの開始
     # form_with model: ポスト名 ・・・  @postモデルに基づきて、投稿フォームを作成するメソッド
     # local:true ・・・非同期通信を行わない=通常のHTTPリクエストとして処理する
      <div class="form-group mb-3">

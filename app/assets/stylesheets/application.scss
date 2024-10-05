@@ -18,14 +18,14 @@
 
  html,
  body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100%; #ページの幅を全幅に
+    height: 100%; #ページの高さを全高に
+    margin: 0; #余白ゼロ
+    padding: 0; #ページ内側の余白を０に
  }
 
- .profiler-results {
-    display: none;
+ .profiler-results { #HTML内でclass="profiler-results"と指定された要素にスタイルを適用
+    display: none; #要素を画面から完全に非表示
  }
 
  header {

@@ -21,6 +21,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root :to => 'homes#top' 
+  root :to => 'homes#top' #root :to => 'コントローラ名#アクション名'
   # トップページにアクセスしたときに、homescontrollerのtopアクションを実行
 end
